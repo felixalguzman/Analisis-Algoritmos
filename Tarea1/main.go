@@ -6,8 +6,8 @@ import (
 	"time"
 )
 
-var colores = []string{"Verde", "Azul", "Negro", "Naranja", "Blanco"}
-var estados = []string{"sp", "fr", "be", "de", "it", "at",
+var colores = []string{"Verde", "Azul", "Negro", "Blanco"}
+var paises = []string{"sp", "fr", "be", "de", "it", "at",
 	"hr", "mk", "bg", "rs", "ba", "si",
 	"sk", "ua", "ro", "fi", "no",
 	"lv", "ru", "tr", "ge", "pt", "an", "lu", "ch", "nl", "dk",
@@ -40,51 +40,11 @@ var vecinos = map[string][]string{
 	"ge": {"az"},
 }
 var colorEstado = map[string]string{
-	"sp": "",
-	"fr": "",
-	"be": "",
-	"de": "",
-	"it": "",
-	"at": "",
-	"hr": "",
-	"mk": "",
-	"bg": "",
-	"rs": "",
-	"ba": "",
-	"si": "",
-	"sk": "",
-	"pl": "",
-	"ua": "",
-	"ro": "",
-	"fi": "",
-	"no": "",
-	"lv": "",
-	"ru": "",
-	"tr": "",
-	"ge": "",
-	"pt": "",
-	"an": "",
-	"lu": "",
-	"ch": "",
-	"nl": "",
-	"dk": "",
-	"cz": "",
-	"li": "",
-	"hu": "",
-	"me": "",
-	"al": "",
-	"el": "",
-	"by": "",
-	"md": "",
-	"mo": "",
-	"se": "",
-	"ee": "",
-	"az": "",
-	"am": "",
+	"sp": "", 	"fr": "", 	"be": "", 	"de": "", 	"it": "", 	"at": "", 	"hr": "", 	"mk": "", 	"bg": "", 	"rs": "", "ba": "", "si": "", "sk": "", "pl": "", "ua": "", "ro": "", "fi": "", "no": "", "lv": "", "ru": "", "tr": "", "ge": "", "pt": "", "an": "", "lu": "", "ch": "", "nl": "", "dk": "", "cz": "", "li": "", "hu": "", "me": "", "al": "", "el": "", "by": "", "md": "", "mo": "", "se": "", "ee": "", "az": "", "am": "",
 }
 
 func main() {
-	
+
 	rand.Seed(time.Now().UTC().UnixNano())
 	start := time.Now()
 	asignarColores()
@@ -106,8 +66,8 @@ func ponerColor(estado string, color string) bool {
 
 func asignarColores() {
 
-	for i := 0; i < 2; i++ {
-		for _, estado := range estados {
+	for i := 0; i < 3; i++ {
+		for _, estado := range paises {
 			colorEstado[estado] = obtenerColor(estado)
 		}
 	}
