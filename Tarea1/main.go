@@ -39,8 +39,8 @@ var vecinos = map[string][]string{
 	"tr": {"am", "ge"},
 	"ge": {"az"},
 }
-var colorEstado = map[string]string{
-	"sp": "", 	"fr": "", 	"be": "", 	"de": "", 	"it": "", 	"at": "", 	"hr": "", 	"mk": "", 	"bg": "", 	"rs": "", "ba": "", "si": "", "sk": "", "pl": "", "ua": "", "ro": "", "fi": "", "no": "", "lv": "", "ru": "", "tr": "", "ge": "", "pt": "", "an": "", "lu": "", "ch": "", "nl": "", "dk": "", "cz": "", "li": "", "hu": "", "me": "", "al": "", "el": "", "by": "", "md": "", "mo": "", "se": "", "ee": "", "az": "", "am": "",
+var colorP = map[string]string{
+	"sp": "", "fr": "", "be": "", "de": "", "it": "", "at": "", "hr": "", "mk": "", "bg": "", "rs": "", "ba": "", "si": "", "sk": "", "pl": "", "ua": "", "ro": "", "fi": "", "no": "", "lv": "", "ru": "", "tr": "", "ge": "", "pt": "", "an": "", "lu": "", "ch": "", "nl": "", "dk": "", "cz": "", "li": "", "hu": "", "me": "", "al": "", "el": "", "by": "", "md": "", "mo": "", "se": "", "ee": "", "az": "", "am": "",
 }
 
 func main() {
@@ -56,7 +56,7 @@ func main() {
 
 func ponerColor(estado string, color string) bool {
 	for _, v := range vecinos[estado] {
-		colorVecino := colorEstado[v]
+		colorVecino := colorP[v]
 		if colorVecino == color {
 			return false
 		}
@@ -68,11 +68,11 @@ func asignarColores() {
 
 	for i := 0; i < 3; i++ {
 		for _, estado := range paises {
-			colorEstado[estado] = obtenerColor(estado)
+			colorP[estado] = obtenerColor(estado)
 		}
 	}
 
-	fmt.Println(colorEstado)
+	fmt.Println(colorP)
 }
 
 func obtenerColor(es string) string {
